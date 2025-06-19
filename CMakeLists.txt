@@ -6,7 +6,13 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+
 add_subdirectory(libs/glfw)
 target_link_libraries(${PROJECT_NAME} glfw)
-find_package(OpenGL REQUIRED)
-target_link_libraries(${PROJECT_NAME} OpenGL::GL)
+
+add_subdirectory(libs/glad)
+target_link_libraries(${PROJECT_NAME} glad)
