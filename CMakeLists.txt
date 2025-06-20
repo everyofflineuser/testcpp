@@ -4,7 +4,9 @@ project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+        renderer/ShaderProgram.cpp
+        renderer/ShaderProgram.h)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
